@@ -1,0 +1,17 @@
+body{
+    background-color:lightblue;
+}
+
+form{
+    margin-left: 20px;   
+}
+
+p{
+    background-color: #CDCDCD;
+    border-style:hidden;
+    
+}
+fieldset{
+    border-style: dashed;
+    border-color: black;
+}

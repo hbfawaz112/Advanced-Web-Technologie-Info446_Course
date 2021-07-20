@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+    <title>Progress Bar</title>
+    
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+	<link rel="stylesheet" href="/resources/demos/style.css">
+	
+	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+</head>
+
+<body>
+    <script>
+		$(document).ready(function(){ 
+		
+				$("#startTimer").click(function(e){
+				
+					$("#progressbar").progressbar({
+							  value: 0,
+							  max : 100 
+							});
+
+							var value = 0,progress;
+
+							var interval = $("#interval").val() * 1000;
+							var inc = (100 * $("#interval").val()) / $("#totalTime").val();
+							
+							progress = setInterval(function() {
+							  value += inc; 
+							  $("#progressbar").progressbar({
+								value : value
+							  });	
+							  if (value == 100) clearInterval(progress);
+							}, interval);  
+             
+				});
+		});
+    </script>
+	
+    <h1 style="color: blue;">Personal Timer</h1>
+    <h4>Please enter the total time and intervaal for the timer in seconds</h4>
+
+    <table>
+        <tr>
+			<td>Total time:</td>
+            <td><input type="text" id="totalTime" /></td>
+        </tr>
+
+        <tr>
+		<td>Interval:</td>
+        <td><input type="text" id="interval" /></td>
+         </tr>
+		 
+        <tr><td></td><td>
+		
+        <button id="startTimer" style="padding-left:45px;padding-right:45px">Start Timer</button></td> </tr>
+		
+    </table>
+   
+    <br>
+	
+     Elapsed time:<div style="width: 300px; height: 25px;" id="progressbar"></div>
+	 
+</body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Assignment 2</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body onload="pageloadfct()">
+    
+    <script type="text/javascript" src="script.js">    </script>
+   
+    <header>
+       <h3 align="center" id = "ok">
+           Testing HTML5 , Canvas , Local Storage , Web Workers , ....
+       </h3>
+       
+       <p style="direction: rtl" id="mytime"></p>
+        
+    </header>
+    
+    <div class="aa">
+     <article>
+       
+       
+        <div align="center">
+           
+            <b>Fill:</b> <input id="fill" value="fill" type="checkbox"/> &nbsp;
+            <b>Color:</b> <input id="favcolor" type="color">
+            
+         </div>
+         <br>
+         
+         
+         <div align="center">
+               
+             <input value="line"  id="line" name="shape"  type="radio" onclick="showf1()"> <b>Line</b>
+              
+             <br><br>
+             <div id="f1" style="display:none;">
+                 <form  name ="form1" align="center">
+                     x1 : <input type="text" size="1" name="x1">
+                     y1 : <input type="text" size="1" name="y1">
+                     x2 : <input type="text" size="1" name="x2">
+                     y2 : <input type="text" size="1" name="y2">
+                  </form>
+             </div>
+         </div>
+         <br>
+         
+         <div align="center">
+            
+             <input  value="rectangle" id="rectangle" name="shape"  type="radio" onclick="showf2()"> <b>Rectangle</b>
+             
+             <br><br>
+             <div id="f2" style="display:none;">
+                 <form  name ="form2"  align="center">
+                     x1 : <input type="text" size="1" name="x1">
+                     y1 : <input type="text" size="1" name="y1">
+                     width : <input type="text" size="1" name="width">
+                     height : <input type="text" size="1" name="height">
+                  </form>
+             </div>
+         </div>
+         
+         <br>
+         
+         <div align="center">
+            
+             <input value="triangle" id="triangle" type="radio" name="shape" onclick="showf3()"> <b>Triangle</b>
+             
+             <br><br>
+             
+             <div id="f3" style="display:none;">
+                 <form  name ="form3"  align="center">
+                     x1:<input type="text" size="1" name="x1">
+                     y1:<input type="text" size="1" name="y1">
+                     x2:<input type="text" size="1" name="x2">
+                     y2:<input type="text" size="1" name="y2">
+                     x3:<input type="text" size="1" name="x3">
+                     y3:<input type="text" size="1" name="y3">
+                 </form>
+             </div>
+         </div>
+         <br>
+         <div align="center">
+            
+             <input id="circle" value="circle" name="shape" type="radio" onclick="showf4()"> <b>Circle</b>
+             
+             <br><br>
+             <div id="f4" style="display:none;">
+                 <form  name ="form4"  align="center">
+                     x1 : <input type="text" size="1" name="x1">
+                     y1 : <input type="text" size="1" name="y1">
+                     radius : <input type="text" size="1" name="raduis">
+                  </form>
+             </div>
+         </div>
+         
+         <br>
+         
+         <button type="button" onclick="draw()">Draw</button>
+         
+     </article>
+     <aside>
+         <fieldset>
+             <div class="box2">
+                <canvas id = "dessin"   width="700" height="400">
+        
+                 </canvas>
+             </div>
+         </fieldset>
+     </aside>
+     </div>
+    <br>
+    <footer>
+        <p class="nbvisist" id="nbvisits"></p>
+    </footer>
+</body>
+</html>

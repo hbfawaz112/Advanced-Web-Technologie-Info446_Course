@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Assignment 1</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+   <script>
+		
+		function checklname(){
+			var lname = document.forms["form1"]["lname"].value;
+        
+        if(lname.length<2)
+            {
+             document.getElementById("v2").innerHTML = "A last name should not be les than 2 caractere";
+            }
+         else{
+            document.getElementById("v2").innerHTML = "";
+          }
+		}
+   
+		function checkfname(){
+			var fname = document.forms["form1"]["fname"].value;
+        
+        if(fname.length<2)
+            {
+             document.getElementById("v3").innerHTML = "A first name should not be les than 2 caractere";
+            }
+          else{
+            document.getElementById("v3").innerHTML = "";
+			}
+		}
+   
+		function checkage(){
+				
+        var age = document.forms["form1"]["age"].value;
+        
+        if(age < 5 || age > 140 )
+            {
+                 document.getElementById("v4").innerHTML = "Age should be between 5 and 140";
+            }
+          else{
+            document.getElementById("v4").innerHTML = "";
+			}
+        
+		}
+   
+		function checknickname(){
+			
+        
+        var nickname= document.forms["form1"]["nickname"].value;
+         if(nickname.length<4)
+            {
+             document.getElementById("v5").innerHTML = "A nickname should not be les than 4 caracteres";
+            }
+          else{
+            document.getElementById("v5").innerHTML = "";
+			}
+        
+		}
+		
+		function checkpassword(){
+				var password = document.forms["form1"]["password"].value;
+         if(password.length<6)
+            {
+             document.getElementById("v6").innerHTML = "A password should not be les than 6 caracteres";
+            }
+          else{
+            document.getElementById("v6").innerHTML = "";
+			  }
+        
+			}
+			
+		function checkconfirmpassword(){
+	    var password1 = document.forms["form1"]["password1"].value;
+        var result = password1.localeCompare(document.forms["form1"]["password"].value);
+         if(result != 0)
+            {
+             document.getElementById("v7").innerHTML = "should be identicale to the above one";
+            }
+          else{
+            document.getElementById("v7").innerHTML = "";
+			}
+		
+		}
+   
+   
+   
+    function f1(){
+       
+        var r1 = document.forms["form1"]["gender"].value;
+        if(r1=='')
+            {
+                document.getElementById("v1").innerHTML = "You should select a sex";
+            }
+        else{
+            document.getElementById("v1").innerHTML = "";
+        }
+        
+        var s1 = document.forms["form1"]["country"].value;
+        
+        if(s1=="s")
+            {
+               document.getElementById("v8").innerHTML = "you should select a country"; 
+            }
+          else{
+            document.getElementById("v8").innerHTML = "";
+        }
+        
+        
+    }
+    </script>
+  
+    <br>
+    <h1>My Registration form</h1>
+    
+    <fieldset>
+    <form  name="form1">
+        
+        <table cellspacing="15">
+            <tr>
+                <td align="right">Sex</td>
+                <td>
+        <input type="radio" id="male" name="gender" value="male" > Male
+       
+        <input type="radio" id="female" name="gender" value="female"> Female
+                </td>
+                <td>
+                    <p id="v1"></p>
+                </td>
+            </tr>
+            
+            <tr>
+                <td align="right">Last Name:</td>
+                <td><input type="text" name="lname" onchange="checklname()"></td>
+                <td><p id="v2"></p></td>
+            </tr>
+            
+            <tr>
+                <td align="right">First Name:</td>
+                <td><input type="text" name="fname" onchange="checkfname()"></td>
+                <td><p id="v3"></p></td>
+            </tr>
+            
+            
+            <tr>
+                <td align="right">Age</td>
+                <td><input type="number" name="age" onchange="checkage()"></td>
+                <td><p id="v4"></p></td>
+            </tr>
+            
+            <tr>
+                <td align="right">NickName:</td>
+                <td><input type="text" name="nickname" onchange="checknickname()"></td>
+                <td><p id="v5"></p></td>
+            </tr>
+            
+            <tr>
+                <td align="right">Password:</td>
+                <td><input type="password" name="password" onchange="checkpassword()"></td>
+                <td><p id="v6"></p></td>
+            </tr>
+            
+            <tr>
+                <td align="right">Password (confirmation):</td>
+                <td><input type="password" name="password1" onchange="checkconfirmpassword()"></td>
+                <td><p id="v7"></p></td>
+            </tr>
+            
+           <tr>
+                <td align="right">Country:</td>
+                <td>
+                <select name="country" id="country">
+                  <option value="s">Select your country</option>
+                  <option value="lebanon">Lebanon</option>
+                  <option value="usa">USA</option>
+                  <option value="canada">Canada</option>
+                </select>
+                </td>
+                <td><p id="v8"></p></td>
+            </tr>
+               
+            <tr>
+                <td align="right" colspan="2">
+                    
+                    <input type="checkbox" name="recievemail">
+                <label>Recieve mail from our website ?</label>
+
+                </td>
+            </tr>    
+            
+            <tr>
+                <td align="right" colspan="2">
+                    <button type="button" onclick="f1()">Register</button>
+                    <input type="reset" value="Renistialize the form">
+                    
+                </td>
+            </tr>    
+            
+            
+            
+        </table>
+        
+    </form>
+    </fieldset>
+</body>
+</html>
